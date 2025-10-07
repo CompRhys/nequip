@@ -34,10 +34,8 @@ jobs:
           python3 -m pip install --upgrade pip
       - name: Linting
         run: |
-          pip install ruff yamllint
-          ruff check .
-          ruff format --check .
-          yamllint .
+          pip install pre-commit
+          pre-commit run --all-files --show-diff-on-failure
       - name: Install PyTorch
         env:
           TORCH: "${{ matrix.torch-version }}"
