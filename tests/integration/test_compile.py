@@ -31,4 +31,3 @@ def test_compile_modes(tmp_path_factory, device, mode, extension):
 
     assert output_path.exists()
     assert output_path.is_file()
-
